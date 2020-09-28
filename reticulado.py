@@ -17,24 +17,28 @@ class Reticulado(object):
         return
     
     def agregar_barra(self, barra):
-        """Implementar"""
+        self.barras.append(barra)
         return
     
     def obtener_coordenada_nodal(self, n): 
-        """Implementar"""
-        return 
+        if n >= self.Nnodos:
+             return
+         return self.xyz[n,:]
     
     def calcular_peso_total(self):
-        """Implementar"""
-        return 
+        peso_total = 0
+         for barra in self.barras:
+             peso_singular = barra.calcular_peso(self)
+             peso_total+= peso_singular
+         return peso_total
     
     def obtener_nodos(self):
-        """Implementar"""
-        return 
+        xy = self.xyz
+        return xy 
     
     def obtener_barras(self):
-        """Implementar"""
-        return 
+        barras = self.barras
+        return barras
     
     def agregar_restriccion(self, nodo, gdl, valor=0.0):
         """Implementar"""
