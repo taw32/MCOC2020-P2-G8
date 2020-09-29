@@ -22,7 +22,6 @@ class Reticulado(object):
     
     def obtener_coordenada_nodal(self, n): 
         if n >= self.Nnodos:
-             return
          return self.xyz[n,:]
     
     def calcular_peso_total(self):
